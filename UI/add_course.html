@@ -24,40 +24,67 @@
 </script>
 
 <script>
-	function validate_form()
+	var number_of_departments = 1;
+	function validate_add_course_form()
 	{
-		var filled_fields = 0;
-		var department = document.forms["instructor_form"]["Department"].value; 
-		if(!(department==null || department=="" || department=="Department"))
+		var flag = 1;
+		var element = document.forms["add_course_form"]["Department"].value;
+		if(element==null || element=="" || element=="Department")
+			flag = 0;
+
+		for(var i=1; i<number_of_departments; i++)
 		{
-			filled_fields++;
+			element = document.forms["add_course_form"]["Department"+i].value;
+			if(element==null || element=="" || element=="Department")
+				flag = 0;
 		}
 
-		var instructor = document.forms["instructor_form"]["Course"].value; 
-		if(!(instructor==null || instructor=="" || instructor=="Course ID"))
-		{
-			filled_fields++;
-		}
+		var element = document.forms["add_course_form"]["Course_ID"].value;
+		if(element==null || element=="" || element=="Course ID")
+			flag = 0;
 
-		var Semester = document.forms["instructor_form"]["Semester"].value; 
-		if(!(Semester==null || Semester=="" || Semester=="Semester"))
-		{
-			filled_fields++;
-		}
+		var element = document.forms["add_course_form"]["Course_Title"].value;
+		if(element==null || element=="" || element=="Course Title")
+			flag = 0;
+		
+		var element = document.forms["add_course_form"]["Credits"].value;
+		if(element==null || element=="" || element=="Credits")
+			flag = 0;
 
-		var Year = document.forms["instructor_form"]["Year"].value; 
-		if(!(Year==null || Year=="" || Year=="Year"))
-		{
-			filled_fields++;
-		}
-
-		if(filled_fields>0)
+		if(flag==1)
 			return true;
 
-		alert("Please fill at least one field.")
+		alert("Enter empty fields to add course!");
 		return false;
-		
 	}
+
+	function add_department_fields()
+	{
+		var element = document.createElement("input");
+		element.setAttribute("type", "text");
+		element.setAttribute("value", "Department");
+		element.setAttribute("class", "text");
+		element.setAttribute("name", "Department"+number_of_departments);
+		element.setAttribute("id", "Department"+number_of_departments);
+
+		var parent = document.getElementById("new_departments");
+		parent.appendChild(element);
+		number_of_departments = number_of_departments+1;
+	}
+
+	function remove_department_fields()
+	{
+		if(number_of_departments==1)
+			alert("A course must have at least one department!");
+		else
+		{
+			number_of_departments = number_of_departments-1;
+			var parent = document.getElementById("new_departments");
+			var child = document.getElementById("Department"+number_of_departments);
+			parent.removeChild(child);
+		}
+	}
+
 </script>
 
 </head>
@@ -71,12 +98,15 @@
 				<label></label>
 			</div>
 			<div class="contact-info">
-				<form name="instructor_form" action="http://localhost/IITH/find_instructor.php" method="post" onsubmit="return validate_form()">
+				<form name="add_course_form" action="http://localhost/IITH/find_instructor.php" method="post" onsubmit="return validate_add_course_form()">
+					<input type="text" name="Course_ID" class="text" value="Course ID" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Course ID';}">
+					<input type="text" name="Course_Title" class="text" value="Course Title" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Course Title';}">
+					<input type="text" name="Credits" class="text" value="Credits" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Credits';}">
 					<input type="text" class="text" name="Department" value="Department" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Department';}">
-					<input type="text" name="Course" class="text" value="Course ID" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Instructor';}">
-					<input type="text" name="Semester" class="text" value="Semester" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Semester';}">
-					<input type="text" name="Year" class="text" value="Year" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Year';}">
-					<input type="submit" value="FIND INSTRUCTOR">
+					<div id="new_departments" name="new_departments"></div>
+					<input type="button" value="+ DEPARTMENT" onclick="add_department_fields()">
+					<input type="button" value="- DEPARTMENT" onclick="remove_department_fields()">
+					<input type="submit" value="ADD COURSE">
 				</form>
 			</div>
 		</div>
