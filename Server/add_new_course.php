@@ -11,7 +11,10 @@
 
 	/* checking for successful connection. */
    	if(!$connection)
-   		die("Connection failed: " . mysqli_connect_error());
+   	{
+         $message = mysqli_connect_error();
+         echo "<script type='text/javascript'>confirm(\"" . $message . "\"); window.location=\"http://localhost/IITH-Course-Schedule/UI/add_course.php\";</script>";
+      }
 
    	/* for post requests. */
    	if($_POST)
@@ -27,20 +30,34 @@
 
       	/* error in connection. */
       	if(!$result)
-      		die("Error adding course: " . mysqli_error($connection));
+      	{
+            $message = mysqli_error($connection);
+            echo "<script type='text/javascript'>confirm(\"" . $message . "\"); window.location=\"http://localhost/IITH-Course-Schedule/UI/add_course.php\";</script>";
+            //die("Error adding course: " . mysqli_error($connection));
+         }
 
       	/* if no record found. */
       	if(mysqli_num_rows($result)>0)
-      		die("Error adding course: Course already exists.");
+      	{
+            $message = "Error adding course: Course already exists.";
+            echo "<script type='text/javascript'>confirm(\"" . $message . "\"); window.location=\"http://localhost/IITH-Course-Schedule/UI/add_course.php\";</script>";
+            //die("Error adding course: Course already exists.");
+         }
 
       	/* adding the new course. */
 	      $sql_query = "INSERT INTO Courses (Course_ID, Course_Title, Credits, Department_Short_Name)
 	                     VALUES ('$course_id', '$course_title', '$credits', '$department')";
 
 	      if(mysqli_query($connection, $sql_query))
-	         echo "Course added successfully!";
+         {
+            $message = "Course added successfully!";
+            echo "<script type='text/javascript'>confirm(\"" . $message . "\"); window.location=\"http://localhost/IITH-Course-Schedule/UI/add_course.php\";</script>";
+         }
 	      else
-	         die("Error adding course: " . mysqli_error($connection));
+         {
+            $message = mysqli_error($connection);
+            echo "<script type='text/javascript'>confirm(\"" . $message . "\"); window.location=\"http://localhost/IITH-Course-Schedule/UI/add_course.php\";</script>";
+         }
    	}
 
    	mysqli_close($connection);
