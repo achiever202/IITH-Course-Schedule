@@ -1,171 +1,170 @@
-Instructor_ID, Instructor_Name, Instructor_Credentials, Department_Short_Name
-1, Renu John, 123, BME
-2, Harikrishnan Narayanan Unni, 123, BME
-3, Subha Narayan Rath, 123, BME
-4, Jyotsnendu Giri, 123, BME
-5, Mohan Raghavan, 123, BME
-6, Ramana Vinjamuri , 123, BME
-7, Basant Kumar Patel, 123, BT
-8, Anindya Roy, 123, BT
-9, N. K. Raghavendra, 123, BT
-10, Thenmalarchelvi Rathinavelan, 123, BT
-11, Rajakumara Eerappa, 123, BT
-12, Anamika Bhargava, 123, BT
-13, Kirti Chandra Sahu, 123, CE
-14, Vinod Janardhanan, 123, CE
-15, Sunil Kumar Maity, 123, CE
-16, Parag D. Pawar, 123, CE
-17, Saptarshi Majumdar, 123, CE
-18, Anand Mohan, 123, CE
-19, Narasimha Mangadoddy, 123, CE
-20, Chandra Shekhar Sharma, 123, CE
-21, Debaprasad Shee, 123, CE
-22, Phanindra Varma Jampana, 123, CE
-23, Kishalay Mitra, 123, CE
-24, Lopamudra Giri, 123, CE
-25, Devarai Santhosh Kumar, 123, CE
-26, Balaji Iyer, 123, CE
-27, Faiz Ahmed Khan, 123, CH
-28, Ch.Subrahmanyam, 123, CH
-29, G. Satyanarayana, 123, CH
-30, M.Deepa, 123, CH
-31, Tarun Kanti Panda, 123, CH
-32, G. Prabusankar, 123, CH
-33, D. S. Sharada, 123, CH
-34, Bhabani Shankar Mallik, 123, CH
-35, Surendra Kumar Martha, 123, CH
-36, Kolluru V.L. Subramaniam , 123, CE
-37, S. Sireesh, 123, CE
-38, B. Umashankar, 123, CE
-39, Amirtham Rajagopal, 123, CE
-40, Shashidhar, 123, CE
-41, K.B.V.N.Phanindra, 123, CE
-42, S. Suriya Prakash, 123, CE
-43, M. Mahendrakumar, 123, CE
-44, Debraj Bhattacharyya , 123, CE
-45, Basudev Biswal , 123, CE
-46, Asif Qureshi , 123, CE
-47, B. Munwar Basha, 123, CE
-48, Riddhi Singh, 123, CE
-49, Anil Agarwal, 123, CE
-50, Surendra Nadh Somala, 123, CE
-51, Bheemarjuna Reddy Tamma, 123, CSE
-52, C. Krishna Mohan, 123, CSE
-53, M. V. Panduranga Rao, 123, CSE
-54, Ch. Sobhan Babu, 123, CSE
-55, Naveen Sivadasan, 123, CSE
-56, Subrahmanyam Kalyanasundaram, 123, CSE
-57, N R Aravind, 123, CSE
-58, Vineeth N Balasubramanian, 123, CSE
-59, Sathya Peri, 123, CSE
-60, Ramakrishna Upadrasta, 123, CSE
-61, Manish Singh, 123, CSE
-62, Kotaro Kataoka, 123, CSE
-63, Deepak John Mathew, 123, DES
-64, Neelakantan, 123, DES
-65, Prasad S Onkar, 123, DES
-66, U B Desai, 123, EE
-67, Mohammed Zafar Ali Khan, 123, EE
-68, Kiran Kuchi, 123, EE
-69, Shiv Govind Singh, 123, EE
-70, Ashudeb Dutta, 123, EE
-71, Sri Rama Murty Kodukula, 123, EE
-72, P. Rajalakshmi, 123, EE
-73, Vaskar Sarkar, 123, EE
-74, Ketan P. Detroja, 123, EE
-75, Soumya Jana, 123, EE
-76, K Siva Kumar, 123, EE
-77, G V V Sharma, 123, EE
-78, Amit Acharyya, 123, EE
-79, Sumohana Channappayya, 123, EE
-80, Siva Rama Krishna, 123, EE
-81, Ravikumar Bhimasingu, 123, EE
-82, Sushmee Badhulika, 123, EE
-83, Pradeep Kumar Yemula, 123, EE
-84, Abhinav Kumar, 123, EE
-85, M.Ramji, 123, ES
-86, Ashudeb Dutta, 123, ES
-87, K. P. Prabheesh, 123, ES
-88, Balasubramaniam Jayaram, 123, ES
-89, Chandrika Prakash Vyasarayani, 123, ES
-90, Debasish Chaudhuri, 123, ES
-91, M.Deepa, 123, ES
-92, M. V. Panduranga Rao, 123, ES
-93, Parag D. Pawar, 123, ES
-94, P. Rajalakshmi, 123, ES
-95, Ranjith Ramadurai, 123, ES
-96, Subrahmanyam Kalyanasundaram, 123, ES
-97, Thenmalarchelvi Rathinavelan, 123, ES
-98, B. Umashankar, 123, ES
-99, Badri Narayan Rath, 123, LA
-100, Indira Jalli , 123, LA
-101, K. P. Prabheesh, 123, LA
-102, Amrita Deb, 123, LA
-103, Srirupa Chatterjee, 123, LA
-104, Mahati Chittem, 123, LA
-105, Shubha Ranganathan, 123, LA
-106, Haripriya Narasimhan, 123, LA
-107, Nandini Ramesh Sankar, 123, LA
-108, Prakash Mondal, 123, LA
-109, D. Sukumar, 123, MA
-110, Challa Subrahmanya Sastry, 123, MA
-111, Balasubramaniam Jayaram, 123, MA
-112, P A Lakshmi Narayana, 123, MA
-113, G Ramesh, 123, MA
-114, Tanmoy Paul, 123, MA
-115, D Venku Naidu , 123, MA
-116, CH. V. G. Narasimha Kumar, 123, MA
-117, Pradipto Banerjee, 123, MA
-118, Prabhakar Akella, 123, MA
-119, Pinaki Prasad Bhattacharjee, 123, MME
-120, Suhash Ranjan Dey, 123, MME
-121, Ranjith Ramadurai, 123, MME
-122, Bharat Bhooshan PANIGRAHI, 123, MME
-123, Atul Suresh Deshpande, 123, MME
-124, Saswata Bhattacharya, 123, MME
-125, Mudrika Khandelwal, 123, MME
-126, Subhradeep Chatterjee, 123, MME
-127, Vinayak Eswaran, 123, ME
-128, N. Venkata Reddy, 123, ME
-129, Raja Banerjee, 123, ME
-130, M.Ramji, 123, ME
-131, R.Prasanth Kumar, 123, ME
-132, K. Venkatasubbaiah, 123, ME
-133, Abhay Sharma, 123, ME
-134, B. Venkatesham, 123, ME
-135, S. Suryakumar, 123, ME
-136, Ashok Kumar Pandey, 123, ME
-137, Chandrika Prakash Vyasarayani, 123, ME
-138, Viswanath Chinthapenta, 123, ME
-139, Harish Nagaraj Dixit, 123, ME
-140, Nishanth Dongari, 123, ME
-141, Karri Badarinath, 123, ME
-142, Pankaj Kolhe , 123, ME
-143, Gangadharan Raju, 123, ME
-144, Saravanan B, 123, ME
-145, Syed Nizamuddin Khaderi, 123, ME
-146, Anjan Kumar Giri, 123, PH
-147, V.Kanchana, 123, PH
-148, Saket Asthana, 123, PH
-149, Prem Pal, 123, PH
-150, Manish K. Niranjan, 123, PH
-151, Narendra Sahu, 123, PH
-152, Debasish Chaudhuri, 123, PH
-153, Vandana Sharma, 123, PH
-154, J.Suryanarayana, 123, PH
-155, Jyoti Ranjan Mohanty, 123, PH
-156, Raghavendra Srikanth Hundi, 123, PH
-157, Sai Santosh Kumar Raavi, 123, PH
-158, S.S.S.P. Rao, 123, PH
-159, Kesav Nori, 123, PH
-160, T. Anjaneyulu, 123, PH
-161, V.G.K. Murty, 123, PH
-162, V.V. Rao, 123, PH
-163, Surya Pratap Vanka, 123, PH
-164, M. R. Madhav, 123, PH
-165, Michael Nathaniel Bleicher, 123, PH
-166, Uma N Iyer, 123, PH
-167, Choudur K. Lakshminarayan, 123, PH
-168, Prof. Alain Hazotte, 123, PH
-169, Prof. Emmanuel Bouzy, 123, PH
-170, Nobuhiro Tsuji, 123, PH
+1,Renu John,123,BME
+2,Harikrishnan Narayanan Unni,123,BME
+3,Subha Narayan Rath,123,BME
+4,Jyotsnendu Giri,123,BME
+5,Mohan Raghavan,123,BME
+6,Ramana Vinjamuri , 123,BME
+7,Basant Kumar Patel,123,BT
+8,Anindya Roy,123,BT
+9,N. K. Raghavendra,123,BT
+10,Thenmalarchelvi Rathinavelan,123,BT
+11,Rajakumara Eerappa,123,BT
+12,Anamika Bhargava,123,BT
+13,Kirti Chandra Sahu,123,CE
+14,Vinod Janardhanan,123,CE
+15,Sunil Kumar Maity,123,CE
+16,Parag D. Pawar,123,CE
+17,Saptarshi Majumdar,123,CE
+18,Anand Mohan,123,CE
+19,Narasimha Mangadoddy,123,CE
+20,Chandra Shekhar Sharma,123,CE
+21,Debaprasad Shee,123,CE
+22,Phanindra Varma Jampana,123,CE
+23,Kishalay Mitra,123,CE
+24,Lopamudra Giri,123,CE
+25,Devarai Santhosh Kumar,123,CE
+26,Balaji Iyer,123,CE
+27,Faiz Ahmed Khan,123,CH
+28,Ch.Subrahmanyam,123,CH
+29,G. Satyanarayana,123,CH
+30,M.Deepa,123,CH
+31,Tarun Kanti Panda,123,CH
+32,G. Prabusankar,123,CH
+33,D. S. Sharada,123,CH
+34,Bhabani Shankar Mallik,123,CH
+35,Surendra Kumar Martha,123,CH
+36,Kolluru V.L. Subramaniam , 123,CE
+37,S. Sireesh,123,CE
+38,B. Umashankar,123,CE
+39,Amirtham Rajagopal,123,CE
+40,Shashidhar,123,CE
+41,K.B.V.N.Phanindra,123,CE
+42,S. Suriya Prakash,123,CE
+43,M. Mahendrakumar,123,CE
+44,Debraj Bhattacharyya , 123,CE
+45,Basudev Biswal , 123,CE
+46,Asif Qureshi , 123,CE
+47,B. Munwar Basha,123,CE
+48,Riddhi Singh,123,CE
+49,Anil Agarwal,123,CE
+50,Surendra Nadh Somala,123,CE
+51,Bheemarjuna Reddy Tamma,123,CSE
+52,C. Krishna Mohan,123,CSE
+53,M. V. Panduranga Rao,123,CSE
+54,Ch. Sobhan Babu,123,CSE
+55,Naveen Sivadasan,123,CSE
+56,Subrahmanyam Kalyanasundaram,123,CSE
+57,N R Aravind,123,CSE
+58,Vineeth N Balasubramanian,123,CSE
+59,Sathya Peri,123,CSE
+60,Ramakrishna Upadrasta,123,CSE
+61,Manish Singh,123,CSE
+62,Kotaro Kataoka,123,CSE
+63,Deepak John Mathew,123,DES
+64,Neelakantan,123,DES
+65,Prasad S Onkar,123,DES
+66,U B Desai,123,EE
+67,Mohammed Zafar Ali Khan,123,EE
+68,Kiran Kuchi,123,EE
+69,Shiv Govind Singh,123,EE
+70,Ashudeb Dutta,123,EE
+71,Sri Rama Murty Kodukula,123,EE
+72,P. Rajalakshmi,123,EE
+73,Vaskar Sarkar,123,EE
+74,Ketan P. Detroja,123,EE
+75,Soumya Jana,123,EE
+76,K Siva Kumar,123,EE
+77,G V V Sharma,123,EE
+78,Amit Acharyya,123,EE
+79,Sumohana Channappayya,123,EE
+80,Siva Rama Krishna,123,EE
+81,Ravikumar Bhimasingu,123,EE
+82,Sushmee Badhulika,123,EE
+83,Pradeep Kumar Yemula,123,EE
+84,Abhinav Kumar,123,EE
+85,M.Ramji,123,ES
+86,Ashudeb Dutta,123,ES
+87,K. P. Prabheesh,123,ES
+88,Balasubramaniam Jayaram,123,ES
+89,Chandrika Prakash Vyasarayani,123,ES
+90,Debasish Chaudhuri,123,ES
+91,M.Deepa,123,ES
+92,M. V. Panduranga Rao,123,ES
+93,Parag D. Pawar,123,ES
+94,P. Rajalakshmi,123,ES
+95,Ranjith Ramadurai,123,ES
+96,Subrahmanyam Kalyanasundaram,123,ES
+97,Thenmalarchelvi Rathinavelan,123,ES
+98,B. Umashankar,123,ES
+99,Badri Narayan Rath,123,LA
+100,Indira Jalli , 123,LA
+101,K. P. Prabheesh,123,LA
+102,Amrita Deb,123,LA
+103,Srirupa Chatterjee,123,LA
+104,Mahati Chittem,123,LA
+105,Shubha Ranganathan,123,LA
+106,Haripriya Narasimhan,123,LA
+107,Nandini Ramesh Sankar,123,LA
+108,Prakash Mondal,123,LA
+109,D. Sukumar,123,MA
+110,Challa Subrahmanya Sastry,123,MA
+111,Balasubramaniam Jayaram,123,MA
+112,P A Lakshmi Narayana,123,MA
+113,G Ramesh,123,MA
+114,Tanmoy Paul,123,MA
+115,D Venku Naidu , 123,MA
+116,CH. V. G. Narasimha Kumar,123,MA
+117,Pradipto Banerjee,123,MA
+118,Prabhakar Akella,123,MA
+119,Pinaki Prasad Bhattacharjee,123,MSE
+120,Suhash Ranjan Dey,123,MSE
+121,Ranjith Ramadurai,123,MSE
+122,Bharat Bhooshan PANIGRAHI,123,MSE
+123,Atul Suresh Deshpande,123,MSE
+124,Saswata Bhattacharya,123,MSE
+125,Mudrika Khandelwal,123,MSE
+126,Subhradeep Chatterjee,123,MSE
+127,Vinayak Eswaran,123,ME
+128,N. Venkata Reddy,123,ME
+129,Raja Banerjee,123,ME
+130,M.Ramji,123,ME
+131,R.Prasanth Kumar,123,ME
+132,K. Venkatasubbaiah,123,ME
+133,Abhay Sharma,123,ME
+134,B. Venkatesham,123,ME
+135,S. Suryakumar,123,ME
+136,Ashok Kumar Pandey,123,ME
+137,Chandrika Prakash Vyasarayani,123,ME
+138,Viswanath Chinthapenta,123,ME
+139,Harish Nagaraj Dixit,123,ME
+140,Nishanth Dongari,123,ME
+141,Karri Badarinath,123,ME
+142,Pankaj Kolhe , 123,ME
+143,Gangadharan Raju,123,ME
+144,Saravanan B,123,ME
+145,Syed Nizamuddin Khaderi,123,ME
+146,Anjan Kumar Giri,123,PH
+147,V.Kanchana,123,PH
+148,Saket Asthana,123,PH
+149,Prem Pal,123,PH
+150,Manish K. Niranjan,123,PH
+151,Narendra Sahu,123,PH
+152,Debasish Chaudhuri,123,PH
+153,Vandana Sharma,123,PH
+154,J.Suryanarayana,123,PH
+155,Jyoti Ranjan Mohanty,123,PH
+156,Raghavendra Srikanth Hundi,123,PH
+157,Sai Santosh Kumar Raavi,123,PH
+158,S.S.S.P. Rao,123,PH
+159,Kesav Nori,123,PH
+160,T. Anjaneyulu,123,PH
+161,V.G.K. Murty,123,PH
+162,V.V. Rao,123,PH
+163,Surya Pratap Vanka,123,PH
+164,M. R. Madhav,123,PH
+165,Michael Nathaniel Bleicher,123,PH
+166,Uma N Iyer,123,PH
+167,Choudur K. Lakshminarayan,123,PH
+168,Prof. Alain Hazotte,123,PH
+169,Prof. Emmanuel Bouzy,123,PH
+170,Nobuhiro Tsuji,123,PH
