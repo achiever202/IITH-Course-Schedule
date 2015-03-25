@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema iithcourses
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema iithcourses
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `iithcourses` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `iithcourses` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Department`
+-- Table `iithcourses`.`Department`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Department` (
+CREATE TABLE IF NOT EXISTS `iithcourses`.`Department` (
   `Short_Name` VARCHAR(5) NOT NULL,
   `Full_Name` VARCHAR(45) NOT NULL,
   `Website` VARCHAR(60) NULL,
@@ -29,9 +29,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Instructor`
+-- Table `iithcourses`.`Instructor`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Instructor` (
+CREATE TABLE IF NOT EXISTS `iithcourses`.`Instructor` (
   `Instructor_ID` INT NOT NULL AUTO_INCREMENT,
   `Instructor_Name` VARCHAR(45) NOT NULL,
   `Instructor_Credentials` VARCHAR(45) NOT NULL,
@@ -40,16 +40,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Instructor` (
   INDEX `fk_Instructor_Department_idx` (`Department_Short_Name` ASC),
   CONSTRAINT `fk_Instructor_Department`
     FOREIGN KEY (`Department_Short_Name`)
-    REFERENCES `mydb`.`Department` (`Short_Name`)
+    REFERENCES `iithcourses`.`Department` (`Short_Name`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Courses`
+-- Table `iithcourses`.`Courses`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Courses` (
+CREATE TABLE IF NOT EXISTS `iithcourses`.`Courses` (
   `Course_ID` CHAR(6) NOT NULL,
   `Course_Title` VARCHAR(45) NOT NULL,
   `Credits` INT NOT NULL,
@@ -58,16 +58,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Courses` (
   INDEX `fk_Courses_Department1_idx` (`Department_Short_Name` ASC),
   CONSTRAINT `fk_Courses_Department1`
     FOREIGN KEY (`Department_Short_Name`)
-    REFERENCES `mydb`.`Department` (`Short_Name`)
+    REFERENCES `iithcourses`.`Department` (`Short_Name`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Offered_Courses`
+-- Table `iithcourses`.`Offered_Courses`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Offered_Courses` (
+CREATE TABLE IF NOT EXISTS `iithcourses`.`Offered_Courses` (
   `ID` INT NOT NULL AUTO_INCREMENT,
   `Semester` INT NOT NULL,
   `Year` INT NOT NULL,
@@ -79,16 +79,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Offered_Courses` (
   INDEX `fk_Offered_Courses_Courses1_idx` (`Courses_Course_ID` ASC),
   CONSTRAINT `fk_Offered_Courses_Courses1`
     FOREIGN KEY (`Courses_Course_ID`)
-    REFERENCES `mydb`.`Courses` (`Course_ID`)
+    REFERENCES `iithcourses`.`Courses` (`Course_ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Schedule`
+-- Table `iithcourses`.`Schedule`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Schedule` (
+CREATE TABLE IF NOT EXISTS `iithcourses`.`Schedule` (
   `Room_Number` INT NOT NULL,
   `Slot` INT NOT NULL,
   `Day_Of_Week` INT NOT NULL,
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Schedule` (
   INDEX `fk_Schedule_Offered_Courses1_idx` (`Offered_Courses_ID` ASC),
   CONSTRAINT `fk_Schedule_Offered_Courses1`
     FOREIGN KEY (`Offered_Courses_ID`)
-    REFERENCES `mydb`.`Offered_Courses` (`ID`)
+    REFERENCES `iithcourses`.`Offered_Courses` (`ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
