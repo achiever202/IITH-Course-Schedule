@@ -4,14 +4,14 @@
 	$server = 'localhost';
 	$database = 'iithcourses';
 	$username = 'root';
-	$password = '123';
+	$password = '';
 	/* connecting to the databse. */
 	$connection = mysqli_connect($server, $username, $password, $database);
 	/* checking for successful connection. */
    	if(!$connection)
    		die("Connection failed: " . mysqli_connect_error());
    	/* for post requests. */
-   	if($_POST);
+   	if($_POST)
    	{
    		$department_short = mysqli_real_escape_string($connection, $_POST['Department']);
    		$course = mysqli_real_escape_string($connection, $_POST['Course']);
@@ -57,7 +57,7 @@
    			}
 
             $sql_query = "SELECT `Courses_Course_ID`,`Course_Title`,`Semester`,`Year`,`Instructor_Name`,`Department_Short_Name` FROM ";
-            $sql_query .= "(SELECT matched_course.*,Instructor_Name FROM (SELECT Offered_Courses.*,Course_Title, Department_Short_Name FROM Offered_Courses,Courses WHERE Course_ID=Courses_Course_ID) matched_course, ";
+            $sql_query .= "(SELECT matched_course.*,Instructor_Name, Department_Short_Name FROM (SELECT Offered_Courses.*,Course_Title FROM Offered_Courses,Courses WHERE Course_ID=Courses_Course_ID) matched_course, ";
             $sql_query .= "`Instructor` WHERE Instructor_Instructor_ID=Instructor_ID) final ";
    			$sql_query .= "WHERE".$str;
    			$result = mysqli_query($connection, $sql_query);
