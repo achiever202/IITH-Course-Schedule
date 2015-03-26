@@ -14,58 +14,57 @@
    	if($_POST)
    	{
    		$instructor_id = mysqli_real_escape_string($connection, $_POST['Instructor_ID']);
-   		$off_dept = mysqli_real_escape_string($connection, $_POST['Department_Short_Name']);
-   		$start_sem = int(mysqli_real_escape_string($connection, $_POST['Start_Semester']));
-   		$end_sem = int(mysqli_real_escape_string($connection, $_POST['End_Semester']));
-   		$start_year = int(mysqli_real_escape_string($connection, $_POST['Start_Year']));
-   		$end_year = int(mysqli_real_escape_string($connection, $_POST['End_Year']));
+   		$off_dept = mysqli_real_escape_string($connection, $_POST['Department']);
+   		$start_sem = mysqli_real_escape_string($connection, $_POST['Start_Semester']);
+   		$end_sem = mysqli_real_escape_string($connection, $_POST['End_Semester']);
+   		$start_year = mysqli_real_escape_string($connection, $_POST['Start_Year']);
+   		$end_year = mysqli_real_escape_string($connection, $_POST['End_Year']);
 
-   		if($off_dept != "" && $instructor_id == "" && $start_sem == "" && $start_year == "" && $end_sem == "" && $end_year == "")
+   		if($off_dept != "Department" && $instructor_id == "Instructor" && $start_sem == "Start Semester" && $start_year == "Start Year" && $end_sem == "End Semester" && $end_year == "End Year")
    		{
-   			$sql_query = "SELECT `Course_ID`,`Course_Title` FROM `Courses` WHERE `Department_Short_Name` = '$course_id'";
+   			$sql_query = "SELECT `Course_ID`,`Course_Title` FROM `Courses` WHERE `Courses`.`Department_Short_Name` = '$off_dept'";
    			$result = mysqli_query($connection, $sql_query);
    		}
    		else
    		{
    			$str = "";
    			$flag = 0;
-   			if($instructor_id != "")
+   			if($instructor_id != "Instructor")  //Default Values
    			{
-   				$str .= " `Instructor_Instructor_ID` = 'Instructor_ID'";
+   				$str .= " `Instructor_Instructor_ID` = '$instructor_id'";
    				$flag = 1;
    			}
-   			if($off_dept != "")
+   			if($off_dept != "Department")
    			{
    				if($flag == 1)
    					$str .= " AND";
    				$str .= " `Department_Short_Name` = '$off_dept'";
    				$flag = 1;
    			}
-   			if($start_year != "" && $start_sem != "")
+   			if($start_year != "Start Year" && $start_sem != "Start Semester")
    			{
    				if($flag == 1)
    					$str .= " AND";
-   				$str .= " `Year` > '$start_year' OR (`Year` = '$start_year' AND `Semester` >= '$start_sem')";
+   				$str .= " (`Year` > '$start_year') OR (`Year` = '$start_year' AND `Semester` >= '$start_sem')";
    				$flag = 1;
    			}
-   			if($end_year != "" && $end_sem != "")
+   			if($end_year != "End Year" && $end_sem != "End Semester")
    			{
    				if($flag == 1)
    					$str .= " AND";
    				$str .= " `Year` < '$end_year' OR (`Year` = '$end_year' AND `Semester` <= '$end_sem')";
    				$flag = 0;
    			}
-   			$sql_query = "SELECT `Courses_Course_ID`,`Course_Title`,`Semester`,`Year`,`Instructor_Name`,`Department_Short_Name` FROM Instructor,Courses,Offered_Courses ";
-   			$sql_query .= "WHERE `Instructor_ID` = `Instructor_Instructor_ID` AND `Courses_Course_ID` = `Course_ID` AND".$str;
+
+            $sql_query = "SELECT `Courses_Course_ID`,`Course_Title`,`Semester`,`Year`,`Instructor_Name`,`Department_Short_Name` FROM ";
+            $sql_query .= "(SELECT * FROM (SELECT Offered_Courses.*,Instructor_Name FROM Instructor,Offered_Courses WHERE Instructor_ID=Instructor_Instructor_ID) ins_course, `Courses` WHERE Courses_Course_ID=Course_ID) final ";
+   			$sql_query .= "WHERE".$str;
    			$result = mysqli_query($connection, $sql_query);
    		}
       	/* error in connection. */
       	if(!$result)
       		die("Error adding course: " . mysqli_error($connection));
-	    if(mysqli_query($connection, $sql_query))
-	        echo "Course added successfully!";
-	    else
-	        die("Error adding course: " . mysqli_error($connection));
+         echo "Number of rows".mysqli_num_rows($result);
    	}
    	mysqli_close($connection);
 ?>

@@ -111,7 +111,7 @@
 				<label></label>
 			</div>
 			<div class="contact-info">
-				<form name="add_course_form" action="http://localhost/IITH/add_new_course.php" method="post" onsubmit="return validate_add_course_form()">
+				<form name="add_course_form" action="http://localhost/IITH-Course-Schedule/Server/add_new_course.php" method="post" onsubmit="return validate_add_course_form()">
 					<input type="text" name="Course_ID" class="text" value="Course ID" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Course ID';}">
 					<input type="text" name="Course_Title" class="text" value="Course Title" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Course Title';}">
 					
@@ -147,7 +147,7 @@
 				<label></label>
 			</div>
 			<div class="contact-info">
-				<form name="offer_course_form" action="http://localhost/IITH/offer_course.php" method="post" onsubmit="return validate_offer_course_form()">
+				<form name="offer_course_form" action="http://localhost/IITH-Course-Schedule/Server/offer_course.php" method="post" onsubmit="return validate_offer_course_form()">
 					<input type="text" name="Course_ID" class="text" value="Course ID" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Instructor';}">
 					<!--<input type="text" class="text" name="Instructor_ID" value="Instructor ID" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Instructor ID';}">
 					<input type="text" name="Semester" class="text" value="Semester" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Semester';}">-->
@@ -179,7 +179,7 @@
 				<label></label>
 			</div>
 			<div class="contact-info">
-				<form name="slot_form" action="http://localhost/IITH/add_slot.php" method="post" onsubmit="return validate_form()">
+				<form name="slot_form" action="http://localhost/IITH-Course-Schedule/Server/add_slot.php" method="post" onsubmit="return validate_form()">
 					<input type="text" class="text" name="Course_ID" value="Course ID" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Course ID';}">
 					<!--<input type="text" name="Room" class="text" value="Room" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Room';}">-->
 					<select name="Room">
