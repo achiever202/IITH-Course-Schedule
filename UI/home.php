@@ -53,7 +53,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li>/</li>
 							<li><a class="scroll" href="http://localhost/IITH-Course-Schedule/UI/add_course.php" target="_blank"><span data-hover="Add Course">Add Course</span></a></li>
 							<li>/</li>
-							<li><a class="scroll" href="http://localhost/IITH-Course-Schedule/UI/logout.php" target="_blank"><span data-hover="Log Out">Log Out</span></a></li>
+							<li><a class="scroll" href="http://localhost/IITH-Course-Schedule/Server/logout.php" target="_blank"><span data-hover="Log Out">Log Out</span></a></li>
 							<li>/</li>
 							
 					 </nav>

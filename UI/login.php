@@ -7,7 +7,7 @@
 	$server = 'localhost';
 	$database = 'iithcourses';
 	$username = 'root';
-	$password = '123';
+	$password = '';
 
 	/* connecting to the databse. */
 	$connection = mysqli_connect($server, $username, $password, $database);
@@ -44,72 +44,6 @@
 	});
 </script>
 
-<script>
-	function validate_form()
-	{
-
-		var Start_Semester = document.forms["instructor_form"]["Start_Semester"].value;
-		var Start_Year = document.forms["instructor_form"]["Start_Year"].value;
-		var End_Semester = document.forms["instructor_form"]["End_Semester"].value;
-		var End_Year = document.forms["instructor_form"]["End_Year"].value;
-		var Department = document.forms["instructor_form"]["Department"].value;
-		var Course_ID = document.forms["instructor_form"]["Course_ID"].value;
-
-		var filled_fields = 0, start_semester=0, end_semester=0, start_year=0, end_year=0;
-		if(Start_Semester!="Semester")
-		{
-			filled_fields  = filled_fields+1;
-			start_semester = 1;
-		}
-
-		if(Start_Year!="Start Year")
-		{
-			filled_fields = filled_fields+1;
-			start_year = 1;
-		}
-
-		if(Department!="Department")
-			filled_fields = filled_fields+1;
-
-		if(Course_ID!="Course_ID")
-			filled_fields = filled_fields+1;
-
-		if(End_Semester!="Semester")
-		{
-			filled_fields = filled_fields+1;
-			end_semester = 1;
-		}
-
-		if(End_Year!="End Year")
-		{
-			filled_fields = filled_fields+1;
-			end_year = 1;
-		}
-		
-
-		if(filled_fields==0)
-		{
-			alert("Please fill at least one field.");
-			return false;
-		}
-
-		if(start_semester+start_year==1)
-		{
-			alert("Please fill both start semester and year.");
-			return false;
-		}
-
-		if(end_semester+end_year==1)
-		{
-			alert("Please fill both end semester and year.");
-			return false;
-		}
-
-		return true;
-		
-	}
-</script>
-
 </head>
 
 <body> 
@@ -121,7 +55,7 @@
 				<label></label>
 			</div>
 			<div class="contact-info">
-				<form name="login_form" action="http://localhost/IITH-Course-Schedule/Server/verify_account.php" method="post" onsubmit="return validate_form()">
+				<form name="login_form" action="http://localhost/IITH-Course-Schedule/Server/verify_account.php" method="post">
 					<select name="Instructor_ID">
 						<option value="Instructor">Instructor</option>
 						<?php

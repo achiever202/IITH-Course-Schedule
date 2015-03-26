@@ -6,7 +6,7 @@
 	$server = 'localhost';
 	$database = 'iithcourses';
 	$username = 'root';
-	$password = '123';
+	$password = '';
 	/* connecting to the databse. */
 	$connection = mysqli_connect($server, $username, $password, $database);
 	/* checking for successful connection. */
@@ -18,7 +18,7 @@
    	/* for post requests. */
    	if($_POST)
    	{
-   		$instructor_id = mysqli_real_escape_string($connection, $_POST['Instructor']);
+   		$instructor_id = mysqli_real_escape_string($connection, $_POST['Instructor_ID']);
    		$password = mysqli_real_escape_string($connection, $_POST['Password']);
 
    		$sql_query = "SELECT * FROM `Instructor` WHERE `Instructor_ID` = '$instructor_id' AND `Instructor_Credentials` = '$password'";
