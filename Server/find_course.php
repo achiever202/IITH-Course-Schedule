@@ -19,12 +19,16 @@
          $end_sem = mysqli_real_escape_string($connection, $_POST['End_Semester']);
          $start_year = mysqli_real_escape_string($connection, $_POST['Start_Year']);
          $end_year = mysqli_real_escape_string($connection, $_POST['End_Year']);
+         
 
          echo '<link href="../UI/css/simple-table.css" rel="stylesheet" type="text/css" />';
          echo '<html><body><center><h>Course Information</h><br><br><table cellpadding="0" cellspacing="0" class="db-table">';
 
-         if($off_dept != "Department" && $instructor_id == "Instructor" && $start_sem == "Start Semester" && $start_year == "Start Year" && $end_sem == "End Semester" && $end_year == "End Year")
+         if($off_dept != "Department" && $instructor_id == "Instructor" && $start_sem == "Semester" && $start_year == "Start Year" && $end_sem == "Semester" && $end_year == "End Year")
          {
+         	//$message = "Here";
+            //echo "<script type='text/javascript'>confirm(\"" . $message . "\"); window.location=\"http://localhost/IITH-Course-Schedule/UI/login.php\";</script>";
+
             $sql_query = "SELECT `Course_ID`,`Course_Title` FROM `Courses` WHERE `Courses`.`Department_Short_Name` = '$off_dept'";
             $result = mysqli_query($connection, $sql_query);
             if(!$result)
@@ -88,7 +92,7 @@
             }
             echo '</tr>';
          }
-      echo '</table></center><br></body></html>';  
+      	echo '</table></center><br></body></html>';  
       }
       mysqli_close($connection);
 ?>

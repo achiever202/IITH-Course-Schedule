@@ -3,7 +3,7 @@
 	$server = 'localhost';
 	$database = 'iithcourses';
 	$username = 'root';
-	$password = '123';
+	$password = '';
 
 	/* connecting to the databse. */
 	$connection = mysqli_connect($server, $username, $password, $database);
