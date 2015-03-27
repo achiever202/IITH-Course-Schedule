@@ -16,7 +16,17 @@
          $semester = mysqli_real_escape_string($connection, $_POST['Semester']);
          $year = mysqli_real_escape_string($connection, $_POST['Year']);
 
-         echo '<link href="../UI/css/simple-table.css" rel="stylesheet" type="text/css" />';
+         echo '<html><link href="../UI/css/table.css" rel="stylesheet" type="text/css" />';
+         echo '<link href="../UI/css/style-find-course.css" rel="stylesheet" type="text/css" />';
+         echo '<body>';
+         echo '<div align="center" class="contact-section text-center" id="CONTACT">';
+            echo '<div class="container">';
+               echo '<div class="contact-section-head">';
+                  echo '<h3>SEMESTER SCHEDULE</h3>';
+                  echo '<br><br>';
+                  echo '<label></label>';
+               echo '</div>';
+            echo '</div>';
 
          $sql_query = "SELECT `timetable`.* , `Instructor`.`Instructor_Name`
                   FROM (
@@ -150,81 +160,89 @@
          }
 
          /*Actually printing the schedule*/
-         echo '<html><body><center><h>Semester Schedule</h><br><br>';
          for($day=0;$day<=5;$day++)
          {  
+            echo '<div class="container">';
+            echo '<div class="contact-section-head">';
+            echo '<h3>';
             switch ($day) {
                case 0:
-                  echo 'Monday<br>';
+                  echo 'Monday';
                   break;
                case 1:
-                  echo 'Tuesday<br>';
+                  echo 'Tuesday';
                   break;
                case 2:
-                  echo 'Wednesday<br>';
+                  echo 'Wednesday';
                   break;
                case 3:
-                  echo 'Thursday<br>';
+                  echo 'Thursday';
                   break;
                case 4:
-                  echo 'Friday<br>';
+                  echo 'Friday';
                   break;
                case 5:
-                  echo 'Saturday<br>';
+                  echo 'Saturday';
                   break;
             }
+            
+            echo '</h3><br><br>';
+            echo '<label></label>';
+            echo '</div>';
+
+            echo '<div class="contact-info">';
             echo '<table cellpadding="0" cellspacing="0" class="db-table"><tr>';
-            echo '<td>Slot/Room No</td>';   
-            echo '<td>LH3</td>';
-            echo '<td>LH2</td>';
-            echo '<td>LH1</td>';
+            echo '<th></th>';   
+            echo '<th>LH3</th>';
+            echo '<th>LH2</th>';
+            echo '<th>LH1</th>';
 
-            echo '<td>116</td>';
-            echo '<td>118</td>';
-            echo '<td>120</td>';
+            echo '<th>116</th>';
+            echo '<th>118</th>';
+            echo '<th>120</th>';
 
-            echo '<td>121</td>';
-            echo '<td>123</td>';
-            echo '<td>126</td>';
+            echo '<th>121</th>';
+            echo '<th>123</th>';
+            echo '<th>126</th>';
 
-            echo '<td>127</td>';
-            echo '<td>128</td>';
-            echo '<td>129</td>';
+            echo '<th>127</th>';
+            echo '<th>128</th>';
+            echo '<th>129</th>';
 
-            echo '<td>130</td>';
-            echo '<td>131</td>';
-            echo '<td>132</td>';
+            echo '<th>130</th>';
+            echo '<th>131</th>';
+            echo '<th>132</th>';
 
-            echo '<td>133</td>';
-            echo '<td>134</td>';
-            echo '<td>201</td>';
+            echo '<th>133</th>';
+            echo '<th>134</th>';
+            echo '<th>201</th>';
 
-            echo '<td>202</td>';
-            echo '<td>203</td>';
-            echo '<td>204</td>';
-            echo '<td>205</td></tr>';
+            echo '<th>202</th>';
+            echo '<th>203</th>';
+            echo '<th>204</th>';
+            echo '<th>205</th></tr>';
 
             $slot=0;
             for ($slot=0; $slot< 5; $slot++) { 
                echo '<tr>';
                switch ($slot) {
                   case 0:
-                     echo '<td>8:30am-10am</td>';
+                     echo '<th>8:30am-10am</th>';
                      break;
                   case 1:
-                     echo '<td>10:00am-11:30am</td>';
+                     echo '<th>10:00am-11:30am</th>';
                      break;
                   case 2:
-                     echo '<td>11:30am-01:00pm</td>';
+                     echo '<th>11:30am-01:00pm</th>';
                      break;
                   case 3:
-                     echo '<td>02:30pm-04:00pm</td>';
+                     echo '<th>02:30pm-04:00pm</th>';
                      break;
                   case 4:
-                     echo '<td>04:00pm-05:30pm</td>';
+                     echo '<th>04:00pm-05:30pm</th>';
                      break;
                   case 5:
-                     echo '<td>05:30pm-07:00pm</td>';
+                     echo '<th>05:30pm-07:00pm</th>';
                      break;
                }
                for ($room=0; $room < 22; $room++) {
@@ -232,9 +250,13 @@
                }
                echo "</tr>";
             }
-            echo '</table><br><br>';
+            echo '</table></center><br><br><br><br>';
+            echo '</div>';
+            echo '</div>';
          }
-         echo '</center><br></body></html>';  
+
+         echo '</div>';
+         echo '</body></html>';  
          mysqli_close($connection);
       }
 ?>
