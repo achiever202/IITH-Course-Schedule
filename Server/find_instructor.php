@@ -20,8 +20,18 @@
    		$start_year = mysqli_real_escape_string($connection, $_POST['Start_Year']);
    		$end_year = mysqli_real_escape_string($connection, $_POST['End_Year']);
 
-         echo '<link href="../UI/css/simple-table.css" rel="stylesheet" type="text/css" />';
-         echo '<html><body><center><h>faculty Info</h><br><br><table cellpadding="0" cellspacing="0" class="db-table">';
+         echo '<html><link href="../UI/css/table.css" rel="stylesheet" type="text/css" />';
+         echo '<link href="../UI/css/style-find-course.css" rel="stylesheet" type="text/css" />';
+         echo '<body>';
+         echo '<div align="center" class="contact-section text-center" id="CONTACT">';
+            echo '<div class="container">';
+               echo '<div class="contact-section-head">';
+                  echo '<h3>Instructor Information</h3>';
+                  echo '<br><br>';
+                  echo '<label></label>';
+               echo '</div>';
+               echo '<div class="contact-info">';
+                  echo '<table cellpadding="0" cellspacing="0" class="db-table">';
 
    		if($department_short != "Department" && $course == "Course_ID" && $start_sem == "Semester" && $start_year == "Start Year" && $end_sem == "Semester" && $end_year == "End Year")
    		{
@@ -29,8 +39,9 @@
    			$result = mysqli_query($connection, $sql_query);
             if(!$result)
                die("Error adding course: " . mysqli_error($connection));
+            
             echo '<tr>';
-            echo '<td>Instructor</td>';
+            echo '<th>Instructor</th>';
             echo '</tr>';
    		}
    		else
@@ -73,12 +84,12 @@
             if(!$result)
                die("Error adding course: " . mysqli_error($connection));
             echo '<tr>';
-            echo '<td>Course ID</td>';
-            echo '<td>Course Title</td>';
-            echo '<td>Semester</td>';
-            echo '<td>Year</td>';
-            echo '<td>Instructor</td>';
-            echo '<td>Offering Department</td>';
+            echo '<th>Course ID</th>';
+            echo '<th>Course Title</th>';
+            echo '<th>Semester</th>';
+            echo '<th>Year</th>';
+            echo '<th>Instructor</th>';
+            echo '<th>Offering Department</th>';
             echo '</tr>';
    		}
          while($row = mysqli_fetch_row($result))
@@ -89,7 +100,11 @@
             }
             echo '</tr>';
          }
-         echo '</table></center><br></body></html>';  
+         echo '</table></center><br>';
+         echo '</div>';
+         echo '</div>';
+         echo '</div>';
+         echo '</body></html>';  
       }
    	mysqli_close($connection);
 ?>
