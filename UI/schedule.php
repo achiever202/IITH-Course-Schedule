@@ -1,7 +1,5 @@
 <?php
 	session_start();
-	if(isset($_SESSION['username']))
-		header('Location: http://localhost/IITH-Course-Schedule/UI/home.php');
 
 	/* initializing database variables. */
 	$server = 'localhost';
@@ -62,7 +60,7 @@
 			filled_fields = filled_fields+1;
 		}
 
-		if(filled_fields==0)
+		if(filled_fields<2)
 		{
 			alert("Please fill all the fields.");
 			return false;

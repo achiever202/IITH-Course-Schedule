@@ -98,6 +98,32 @@
 		return false;
 	}
 
+	function validate_add_slot_form()
+	{
+		var flag = 1;
+		var element = document.forms["add_slot_form"]["Room"].value;
+		if(element==null || element=="" || element=="Room")
+			flag = 0;
+
+		var element = document.forms["add_slot_form"]["Day"].value;
+		if(element==null || element=="" || element=="Day")
+			flag = 0;
+
+		var element = document.forms["add_slot_form"]["Slot"].value;
+		if(element==null || element=="" || element=="Slot")
+			flag = 0;
+		
+		var element = document.forms["add_slot_form"]["Course_ID"].value;
+		if(element==null || element=="" || element=="Course_ID")
+			flag = 0;
+
+		if(flag==1)
+			return true;
+
+		alert("Enter empty fields to offer course!");
+		return false;
+	}
+
 </script>
 
 </head>
@@ -124,6 +150,7 @@
 						<option value="5">5</option>
 					</select>
 					<select name="Department">
+						<option value="Department">Department</option>
 						<?php
 							while($row = $department_result->fetch_assoc())
 							{
@@ -153,6 +180,7 @@
 					<input type="text" name="Semester" class="text" value="Semester" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Semester';}">-->
 					
 					<select name="Instructor_ID">
+						<option value="Instructor_ID">Instructor</option>
 						<?php
 							while($row = $instructor_result->fetch_assoc())
 							{
@@ -161,6 +189,7 @@
 						?>
 					</select>
 					<select name="Semester">
+						<option value="Semester">Semester</option>
 						<option value="1">Fall</option>
 						<option value="0">Spring</option>
 					</select>
@@ -179,10 +208,11 @@
 				<label></label>
 			</div>
 			<div class="contact-info">
-				<form name="slot_form" action="http://localhost/IITH-Course-Schedule/Server/add_slot.php" method="post" onsubmit="return validate_form()">
+				<form name="add_slot_form" action="http://localhost/IITH-Course-Schedule/Server/add_slot.php" method="post" onsubmit="return validate_add_slot_form()">
 					<input type="text" class="text" name="Course_ID" value="Course ID" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Course ID';}">
 					<!--<input type="text" name="Room" class="text" value="Room" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Room';}">-->
 					<select name="Room">
+						<option value="Room">Room No.</option>
 						<option value="LH3">LH3</option>
 						<option value="LH2">LH2</option>
 						<option value="LH1">LH1</option>
@@ -207,6 +237,7 @@
 						<option value="205">205</option>
 					</select>
 					<select name="Day">
+						<option value="Day">Day</option>
 						<option value="0">Monday</option>
 						<option value="1">Tuesday</option>
 						<option value="2">Wednesday</option>
@@ -215,6 +246,7 @@
 						<option value="5">Saturday</option>
 					</select>
 					<select name="Slot">
+						<option value="Slot">Slot</option>
 						<option value="0">08:30 AM - 10:00 AM</option>
 						<option value="1">10:00 AM - 11:30 AM</option>
 						<option value="2">11:30 AM - 01:00 PM</option>
@@ -223,11 +255,6 @@
 						<option value="5">05:30 PM - 07:00 PM</option>
 					</select>
 					<input type="submit" value="ADD SLOT">
-
-					<datalist id="day">
-						<option class="list_option" value="Monday">
-						<option class="list_option" value="Tuesday">
-					</datalist>
 				</form>
 			</div>
 		</div>
