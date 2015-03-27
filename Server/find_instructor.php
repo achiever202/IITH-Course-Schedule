@@ -4,7 +4,7 @@
 	$server = 'localhost';
 	$database = 'iithcourses';
 	$username = 'root';
-	$password = '';
+	$password = '123';
 	/* connecting to the databse. */
 	$connection = mysqli_connect($server, $username, $password, $database);
 	/* checking for successful connection. */
@@ -14,23 +14,23 @@
    	if($_POST)
    	{
    		$department_short =mysqli_real_escape_string($connection, $_POST['Department']);
-   		$course = mysqli_real_escape_string($connection, $_POST['Course']);
+   		$course = mysqli_real_escape_string($connection, $_POST['Course_ID']);
    		$start_sem = mysqli_real_escape_string($connection, $_POST['Start_Semester']);
    		$end_sem = mysqli_real_escape_string($connection, $_POST['End_Semester']);
    		$start_year = mysqli_real_escape_string($connection, $_POST['Start_Year']);
    		$end_year = mysqli_real_escape_string($connection, $_POST['End_Year']);
 
          echo '<link href="../UI/css/simple-table.css" rel="stylesheet" type="text/css" />';
-         echo '<html><body><center><h>Faculty Info</h><br><br><table cellpadding="0" cellspacing="0" class="db-table">';
+         echo '<html><body><center><h>faculty Info</h><br><br><table cellpadding="0" cellspacing="0" class="db-table">';
 
-   		if($department_short != "Department" && $course == "Course" && $start_sem == "Start Semester" && $start_year == "Start Year" && $end_sem == "End Semester" && $end_year == "End Year")
+   		if($department_short != "Department" && $course == "Course_ID" && $start_sem == "Semester" && $start_year == "Start Year" && $end_sem == "Semester" && $end_year == "End Year")
    		{
    			$sql_query = "SELECT `Instructor_Name` FROM `Instructor` WHERE `Department_Short_Name` = '$department_short'";
    			$result = mysqli_query($connection, $sql_query);
             if(!$result)
                die("Error adding course: " . mysqli_error($connection));
             echo '<tr>';
-            echo '<td>Instructor Name</td>';
+            echo '<td>Instructor</td>';
             echo '</tr>';
    		}
    		else
@@ -78,7 +78,7 @@
             echo '<td>Semester</td>';
             echo '<td>Year</td>';
             echo '<td>Instructor</td>';
-            echo '<td>Faculty Department</td>';
+            echo '<td>Offering Department</td>';
             echo '</tr>';
    		}
          while($row = mysqli_fetch_row($result))
@@ -89,8 +89,7 @@
             }
             echo '</tr>';
          }
-
          echo '</table></center><br></body></html>';  
-   	}
+      }
    	mysqli_close($connection);
 ?>
