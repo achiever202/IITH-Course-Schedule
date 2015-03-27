@@ -143,14 +143,14 @@
 					</select>
 					<select name="Start_Semester">
 						<option value="Semester">Start Semester</option>
-						<option value="0">Fall</option>
-						<option value="1">Spring</option>
+						<option value="1">Fall</option>
+						<option value="0">Spring</option>
 					</select> 
 					<input type="text" class="text" name="Start_Year" value="Start Year" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Start Year';}">
 					<select name="End_Semester">
 						<option value="Semester">End Semester</option>
-						<option value="0">Fall</option>
-						<option value="1">Spring</option>
+						<option value="1">Fall</option>
+						<option value="0">Spring</option>
 					</select> 
 					<input type="text" class="text" name="End_Year" value="End Year" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'End Year';}">
 					<input type="submit" value="FIND INSTRUCTOR">

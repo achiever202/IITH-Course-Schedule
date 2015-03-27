@@ -161,8 +161,8 @@
 						?>
 					</select>
 					<select name="Semester">
-						<option value="0">Fall</option>
-						<option value="1">Spring</option>
+						<option value="1">Fall</option>
+						<option value="0">Spring</option>
 					</select>
 					<input type="text" name="Year" class="text" value="Year" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Year';}">
 					<input type="submit" value="OFFER COURSE">
